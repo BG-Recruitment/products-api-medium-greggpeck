@@ -41,8 +41,8 @@ const updateProduct = async (request, response) => {
         message: "product not found, try again."
     })
     const error = {
-        criteria1: "MRP should be less than equal to the Price",
-        criteria2: "Stock count is 0",
+        criteria1: ["MRP should be less than equal to the Price"],
+        criteria2: ["Stock count is 0"],
         errors: [
             "MRP should be less than equal to the Price",
             "Stock count is 0"
