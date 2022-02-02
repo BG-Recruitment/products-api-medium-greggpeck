@@ -23,7 +23,7 @@ const getProducts = async (request, reponse) => {
 
 const createProduct = async (request, response) => {
     const { id, name, price, mrp, stock, isPublished } = request.body
-    await Product.create({
+    const product = await Product.create({
         "name": name,
         "price": price,
         "mrp": mrp,
@@ -31,9 +31,7 @@ const createProduct = async (request, response) => {
         "isPublished": false,
     })
 
-    response.status(201).json({
-        message: "Product created successfully"
-    })
+    response.status(201).json(product)
 }
 
 const updateProduct = async (request, response) => {
