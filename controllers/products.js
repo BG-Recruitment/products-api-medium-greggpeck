@@ -52,8 +52,10 @@ const updateProduct = async (request, response) => {
     if (product.mrp < product.price) return response.status(422).json(error.criteria1)
     if (product.stock <= 0) return response.status(422).json(error.criteria2)
 
-    await Product.update({ isPublished: true })
-    response.status(204)
+    await Product.update({ isPublished: true }, { where: { id: id } })
+    response.status(204).json({
+        message: "product updated"
+    })
 }
 
 const deleteProduct = async (request, response) => {
