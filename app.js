@@ -6,9 +6,10 @@ var logger = require('morgan');
 require('./connection');
 
 var indexRouter = require('./routes/index');
+const products = require('./routes/products');
 
 var app = express();
-
+const PORT = 4000;
 // view engine setup
 app.set('view engine', 'jade');
 
@@ -19,6 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-
+app.use(products)
+app.listen(PORT);
 
 module.exports = app;

@@ -14,4 +14,5 @@ const Product = sequelize.define("product", {
     isPublished: DataTypes.BOOLEAN
 }, {timestamps: false});
 
+
 module.exports = Product;

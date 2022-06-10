@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "nodemon app",
     "start": "node bin/www",
     "prestart": "npm install",
     "pretest": "npm install",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "bluebird": "^3.7.2",
-    "cross-env": "^7.0.2"
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.15"
   }
 }
